@@ -79,9 +79,7 @@ class Population:
 		for individ in self.population:
 			self.population.remove(individ)
 		# Perform mutation (see individual.mutate())
-		for individ in new_pop:
-			individ.mutate(self.mutation_rate)
-			self.fitness(individ)
+		for individ in new_pop: individ.mutate(self.mutation_rate)
 		for individ in new_pop:
 			self.fitness(individ)
 			self.population.append(individ)
