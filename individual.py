@@ -4,17 +4,19 @@ import random
 
 class Traveler:
 	# Single individual
+	# represents salesman's path
 
-	# Size of genome (number of cities)
+	# Size of genome (max number of cities)
 	size = 0
 	# Genome is array of nodes (cities)
 	# They are conected in the same order as in the array
 	genome = []
-
+	# Fitness of this individual
+	# Assigned by population class 
 	fitness = 0
 
-	def __init__(self,nsize,gnme=[]):
-		self.size = nsize
+	def __init__(self,max_num,gnme=[]):
+		self.size = max_num
 		self.genome = []
 		if len(gnme) == 0:
 			i = 0
@@ -35,27 +37,11 @@ class Traveler:
 	def mutate(self,mutate_rate):
 		x = random.random()
 		if x < mutate_rate:
-			for i in range(1,random.randint(2,int(self.size/1.5))):
+			for i in range(1,random.randint(2,4)):
 				node1 = random.choice(self.genome)
 				i1 = self.genome.index(node1)
 				self.genome.remove(node1)
-				node2 = self.genome[i1-random.choice([1,2,3])]
-				i2 = self.genome.index(node2)
-				self.genome.remove(node2)
-				self.genome.insert(i1,node2)
-				self.genome.insert(i2,node1)
-
-	# Switch two random nodes			
-	def mutatev3(self,mutate_rate):
-		x = random.random()
-		if x < mutate_rate:
-			for i in range(0,int(self.size/4)):
-				node1 = random.choice(self.genome)
-				i1 = self.genome.index(node1)
-				self.genome.remove(node1)
-				node2 = random.choice(self.genome)
-				while node2 == node1: 
-					node2 = random.choice(self.genome)
+				node2 = self.genome[i1-1]
 				i2 = self.genome.index(node2)
 				self.genome.remove(node2)
 				self.genome.insert(i1,node2)

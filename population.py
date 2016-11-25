@@ -1,6 +1,6 @@
 import math
 import random
-from individualv2 import Traveler
+from individual import Traveler
 	
 class Population:
 
