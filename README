@@ -2,6 +2,11 @@
 
 TRAVELING SALESMAN PROBLEM
 
+IMPORTANT:
+requires pygame
+
+Description:
+
 This program is designed with a purpose to solve TSP problem using genetic algorithm.
 
 INDIVIDUAL:

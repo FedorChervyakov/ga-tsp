@@ -1,7 +1,7 @@
 import sys
 import pygame
-from populationv2 import Population
-from individualv2 import Traveler
+from population import Population
+from individual import Traveler
 pygame.init()
 
 mutation_rate = 0.6
