@@ -79,7 +79,7 @@ class Population:
 		for individ in self.population:
 			self.population.remove(individ)
 		# Perform mutation (see individual.mutate())
-		for individ in new_pop: individ.mutate(self.mutation_rate)
+		for individ in new_pop: individ.mutatev2(self.mutation_rate)
 		for individ in new_pop:
 			self.fitness(individ)
 			self.population.append(individ)
@@ -100,7 +100,7 @@ class Population:
 		while i != len(individ.genome):
 			dx =  self.cities[individ.genome[i]][0] - self.cities[individ.genome[i-1]][0]
 			dy =  self.cities[individ.genome[i]][1] - self.cities[individ.genome[i-1]][1] 
-			fitn += 1 / math.sqrt(math.pow(dx,2) + math.pow(dy,2))
+			fitn += len(individ.genome) / (math.sqrt(math.pow(dx,2) + math.pow(dy,2)))
 			i += 1
 		individ.fitness = fitn
 		return fitn

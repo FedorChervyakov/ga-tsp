@@ -1,10 +1,11 @@
 import sys
+import math
 import pygame
 from population import Population
 from individual import Traveler
 pygame.init()
 
-mutation_rate = 0.4
+mutation_rate = 0.6
 crossover_point = 0.3
 crossover_point2 = 0.7 
 #pop_size = 50
@@ -48,7 +49,7 @@ def main():
 	screen.fill(WHITE)
 	pygame.display.flip()
 	cities = read_cities(pane)
-	pop_size = math.pow(2,len(cities)) 		
+	pop_size = len(cities) * 20	
 	pop = Population(pop_size, cities, crossover_point,crossover_point2,mutation_rate)
 	done = False
 	while not done:

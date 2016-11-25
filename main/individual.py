@@ -37,11 +37,11 @@ class Traveler:
 	def mutate(self,mutate_rate):
 		x = random.random()
 		if x < mutate_rate:
-			for i in range(1,random.randint(2,len(self.genome))):
+			for i in range(1,random.randint(1,len(self.genome))):
 				node1 = random.choice(self.genome)
 				i1 = self.genome.index(node1)
 				self.genome.remove(node1)
-				node2 = self.genome[i1-2]
+				node2 = self.genome[i1-4]
 				i2 = self.genome.index(node2)
 				self.genome.remove(node2)
 				self.genome.insert(i1,node2)
@@ -63,7 +63,7 @@ class Traveler:
 				self.genome.remove(node2)
 				self.genome.insert(i1,node2)
 				self.genome.insert(i2,node1)
-				y = random.random()*5
+				y = 1.1
 
 
 def main():
