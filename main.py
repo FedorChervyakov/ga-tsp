@@ -28,15 +28,9 @@ def draw_path(pane,color,Tourist,cities,width=2):
 		screen.blit(pane,(0,0))
 		i += 1
 
-
-def main():
-	pane = pygame.Surface(size)
-	pane.fill(WHITE)
-	screen.fill(WHITE)
-	pygame.display.flip()
+def read_cities(pane):
 	cities = []
 	done = False
-	fitn = 0
 	while not done:
 		for event in pygame.event.get():
 			if event.type == pygame.MOUSEBUTTONDOWN:
@@ -46,7 +40,14 @@ def main():
 				pygame.display.flip()
 			if (event.type == pygame.KEYDOWN) and (event.key == pygame.K_RETURN): done = True
 			if event.type == pygame.QUIT: sys.exit()
-				
+	return cities
+
+def main():
+	pane = pygame.Surface(size)
+	pane.fill(WHITE)
+	screen.fill(WHITE)
+	pygame.display.flip()
+	cities = read_cities(pane)		
 	pop = Population(pop_size, cities, crossover_point,crossover_point2,mutation_rate)
 	done = False
 	while not done:
