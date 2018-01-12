@@ -1,4 +1,4 @@
-@author Theodor Chervyakov
+@author Fedor Chervyakov
 
 # Traveling salesman problem solver
 
