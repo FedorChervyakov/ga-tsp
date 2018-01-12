@@ -5,8 +5,8 @@ from population import Population
 from individual import Traveler
 pygame.init()
 
-mutation_rate = 0.6
-crossover_point = 0.3
+mutation_rate = 0.8
+crossover_point = 0.4
 crossover_point2 = 0.7 
 #pop_size = 50
 
