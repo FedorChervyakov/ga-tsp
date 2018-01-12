@@ -1,20 +1,19 @@
 @author Theodor Chervyakov
 
-TRAVELING SALESMAN PROBLEM
+# Traveling salesman problem solver
 
-IMPORTANT:
+**IMPORTANT:**
 requires pygame
 
-Description:
+**Description:**
 
 This program is designed with a purpose to solve TSP problem using genetic algorithm.
 
-INDIVIDUAL:
-Array of N numbers is a genome, where N is a number of cities.
+**Individual:** Array of N numbers is a genome, where N is a number of cities.
 Each number represents a single city. They are connected in the same 
 order as they are in the array.
 
-STEPS:
+**Steps:**
 1. Generate initial population 
 2. Assign fitnesses
 3. Select best-berforming individuals 
